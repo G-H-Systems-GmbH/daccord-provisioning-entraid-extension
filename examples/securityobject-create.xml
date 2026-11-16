@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    addSecurityObject - creates a group.
+    Test call:
+        java -Dlog4j2.level=DEBUG -jar <runnable-jar> addsecurityobject /opt/GuH/daccord-provisioning-gadget/res config.xml securityobject-create.xml
+-->
+<provisioning>
+
+    <system>
+        <systemid>YOUR_SYSTEM_ID</systemid>
+    </system>
+
+    <config>
+        <!-- Collector of the Entra ID JavaConnector extension -->
+        <collectorid>YOUR_COLLECTOR_ID</collectorid>
+        <!-- <mailenabled>false</mailenabled> -->
+        <!-- <securityenabled>true</securityenabled> -->
+    </config>
+
+    <task>
+        <request_name>Example group</request_name>
+        <object_description>Created by the test</object_description>
+    </task>
+
+</provisioning>

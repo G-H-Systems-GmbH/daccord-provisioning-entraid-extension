@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    addAccount - creates a user; the person supplies given name and surname, the name is generated.
+    Test call:
+        java -Dlog4j2.level=DEBUG -jar <runnable-jar> addaccount /opt/GuH/daccord-provisioning-gadget/res config.xml account-create.xml
+-->
+<provisioning>
+
+    <system>
+        <systemid>YOUR_SYSTEM_ID</systemid>
+    </system>
+
+    <config>
+        <!-- Collector of the Entra ID JavaConnector extension -->
+        <collectorid>YOUR_COLLECTOR_ID</collectorid>
+        <!-- Domain of the userPrincipalName, default: tenant domain of the collector (gp_param3) -->
+        <domainname>yourdomain.onmicrosoft.com</domainname>
+        <!-- standalone | shared | unique -->
+        <sharing_strategy>standalone</sharing_strategy>
+        <!-- Optional:
+        <upn_uniqueness_limit>20</upn_uniqueness_limit>
+        <usertype>Member</usertype>
+        <initial_accountenabled>true</initial_accountenabled>
+        <password_strategy>fromtask</password_strategy>   fromtask | fromperson | fromconfiguration | fromrequest | generate | none
+        <password_forcechangenextsignin>true</password_forcechangenextsignin>
+        <accountname_strategy>GIVENNAMEFIRST</accountname_strategy>
+        -->
+    </config>
+
+    <task>
+        <!-- standard | service (needs request_name) | admin | test -->
+        <request_type>standard</request_type>
+        <!-- Optional: explicit account name instead of the generated one -->
+        <!-- <request_name>mmustermann</request_name> -->
+        <object_password>YOUR_PASSWORD</object_password>
+        <!-- every further object_* is a Graph property of the user -->
+        <object_department>IT</object_department>
+    </task>
+
+    <person>
+        <givenname>Max</givenname>
+        <surname>Mustermann</surname>
+    </person>
+
+</provisioning>

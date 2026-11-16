@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    modifyAccountType - changes the userType.
+    Test call:
+        java -Dlog4j2.level=DEBUG -jar <runnable-jar> modifyaccounttype /opt/GuH/daccord-provisioning-gadget/res config.xml account-type.xml
+-->
+<provisioning>
+
+    <system>
+        <systemid>YOUR_SYSTEM_ID</systemid>
+    </system>
+
+    <config>
+        <!-- Collector of the Entra ID JavaConnector extension -->
+        <collectorid>YOUR_COLLECTOR_ID</collectorid>
+    </config>
+
+    <task>
+        <object_uniqueid>YOUR_USER_OBJECT_ID</object_uniqueid>
+        <!-- Entra ID userType: Member | Guest -->
+        <request_type>Guest</request_type>
+    </task>
+
+</provisioning>

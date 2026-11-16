@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    moveSecurityObject - Entra ID has no OUs; same as modify.
+    Test call:
+        java -Dlog4j2.level=DEBUG -jar <runnable-jar> movesecurityobject /opt/GuH/daccord-provisioning-gadget/res config.xml securityobject-move.xml
+-->
+<provisioning>
+
+    <system>
+        <systemid>YOUR_SYSTEM_ID</systemid>
+    </system>
+
+    <config>
+        <!-- Collector of the Entra ID JavaConnector extension -->
+        <collectorid>YOUR_COLLECTOR_ID</collectorid>
+    </config>
+
+    <task>
+        <object_uniqueid>YOUR_GROUP_OBJECT_ID</object_uniqueid>
+        <object_description>Moved</object_description>
+    </task>
+
+</provisioning>

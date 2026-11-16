@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    addPermission - adds the user to the group.
+    Test call:
+        java -Dlog4j2.level=DEBUG -jar <runnable-jar> addpermission /opt/GuH/daccord-provisioning-gadget/res config.xml permission-create.xml
+-->
+<provisioning>
+
+    <system>
+        <systemid>YOUR_SYSTEM_ID</systemid>
+    </system>
+
+    <config>
+        <!-- Collector of the Entra ID JavaConnector extension -->
+        <collectorid>YOUR_COLLECTOR_ID</collectorid>
+    </config>
+
+    <task>
+    </task>
+
+    <account>
+        <uniqueid>YOUR_USER_OBJECT_ID</uniqueid>
+    </account>
+
+    <securityobject>
+        <uniqueid>YOUR_GROUP_OBJECT_ID</uniqueid>
+    </securityobject>
+
+</provisioning>

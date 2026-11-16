@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    customAccountCommand "set_authenticationmethods" - registers MFA methods.
+    Test call:
+        java -Dlog4j2.level=DEBUG -jar <runnable-jar> customaccountcommand /opt/GuH/daccord-provisioning-gadget/res config.xml account-command.xml
+-->
+<provisioning>
+
+    <system>
+        <systemid>YOUR_SYSTEM_ID</systemid>
+    </system>
+
+    <config>
+        <!-- Collector of the Entra ID JavaConnector extension -->
+        <collectorid>YOUR_COLLECTOR_ID</collectorid>
+    </config>
+
+    <task>
+        <object_uniqueid>YOUR_USER_OBJECT_ID</object_uniqueid>
+        <request_command>set_authenticationmethods</request_command>
+        <!-- every request_* goes to the extension without the prefix -->
+        <request_authenticationmethods>phone=+49 170 1234567;email=max.mustermann@example.com</request_authenticationmethods>
+    </task>
+
+</provisioning>

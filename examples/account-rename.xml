@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    renameAccount - renames a user (mailNickname, userPrincipalName, displayName).
+    Test call:
+        java -Dlog4j2.level=DEBUG -jar <runnable-jar> renameaccount /opt/GuH/daccord-provisioning-gadget/res config.xml account-rename.xml
+-->
+<provisioning>
+
+    <system>
+        <systemid>YOUR_SYSTEM_ID</systemid>
+    </system>
+
+    <config>
+        <!-- Collector of the Entra ID JavaConnector extension -->
+        <collectorid>YOUR_COLLECTOR_ID</collectorid>
+        <domainname>yourdomain.onmicrosoft.com</domainname>
+        <!-- Optional: accounts synced from AD -->
+        <!-- <syncedaccount_policy>skipattributes</syncedaccount_policy>   skipattributes | fail | ignore -->
+        <!-- <syncedaccount_cloudattributes>usageLocation,preferredLanguage</syncedaccount_cloudattributes> -->
+    </config>
+
+    <task>
+        <object_uniqueid>YOUR_USER_OBJECT_ID</object_uniqueid>
+        <request_name>mmustermann2</request_name>
+        <request_displayname>Max Mustermann-Muster</request_displayname>
+    </task>
+
+</provisioning>

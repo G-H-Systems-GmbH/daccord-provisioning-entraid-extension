@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    customSecurityObjectCommand "graphrequest" - needs gp_param11 = true at the collector, for tests only.
+    Test call:
+        java -Dlog4j2.level=DEBUG -jar <runnable-jar> customsecurityobjectcommand /opt/GuH/daccord-provisioning-gadget/res config.xml securityobject-command.xml
+-->
+<provisioning>
+
+    <system>
+        <systemid>YOUR_SYSTEM_ID</systemid>
+    </system>
+
+    <config>
+        <!-- Collector of the Entra ID JavaConnector extension -->
+        <collectorid>YOUR_COLLECTOR_ID</collectorid>
+    </config>
+
+    <task>
+        <object_uniqueid>YOUR_GROUP_OBJECT_ID</object_uniqueid>
+        <request_command>graphrequest</request_command>
+        <request_httpmethod>GET</request_httpmethod>
+        <request_resource>groups/YOUR_GROUP_OBJECT_ID?$select=id,displayName</request_resource>
+    </task>
+
+</provisioning>
